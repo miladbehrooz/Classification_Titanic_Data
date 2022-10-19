@@ -20,15 +20,17 @@ with open('../models/features.joblib','rb') as features_file:
 @app.post('/prediction')
 def predict(Pclass: int , Name: str, Sex: str, Age:int, Ticket:str, Fare:float, Cabin:str, Embarked:str ,Relatives:int):
     """
-    item_id: Your item ID description will be here
+    Class - Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd) |
+    Relatives - Number of Relatves Aboard |
+    Ticket - Ticket Number |
+    Fare - Passenger Fare |
+    Embarked - Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)
     """
     if model:
         try:
             query = {'Pclass':Pclass,'Name':Name, 'Sex':Sex, 'Age':Age, 'Ticket':Ticket, 'Fare':Fare, 'Cabin':Cabin, 'Embarked':Embarked,'Relatives':Relatives} 
             query = pd.DataFrame(query,index=[0])
             query = query.reindex(columns=features, fill_value=0)
-            print(query)
-
             predict = model.predict(query)
 
             return {'prediction':str(predict)}
