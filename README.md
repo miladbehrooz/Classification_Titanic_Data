@@ -10,6 +10,7 @@ Figure : Main perfromance metrics for implemented machine learning classifiers
 ## Usage
 - Run REST API with: 
 ``` cd codes```
+<br>
 ```uvicorn api:app --reload``` 
 
 
