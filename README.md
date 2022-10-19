@@ -8,9 +8,10 @@
 Figure : Main perfromance metrics for implemented machine learning classifiers
 
 ## Usage
-- Run REST API with: <br>
-``` cd codes```
-<br>
-```uvicorn api:app --reload``` 
-- To access interactive API documentation and interface open ``` http://127.0.0.1:8000/docs```  after starting the API locally.
+- Run REST API with: 
+
+    ``` cd codes```
+
+    ```uvicorn api:app --reload``` 
+- To access interactive API documentation and interface, open ``` http://127.0.0.1:8000/docs```  after starting the API locally.
 
